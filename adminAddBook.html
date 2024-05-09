@@ -7,15 +7,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../static/adminAddBook.css" />
-  <link rel="stylesheet" href="../static/error.css" />
-  <script src="../static/script.js"></script>
+  <link rel="stylesheet" href="static/adminAddBook.css" />
+  <link rel="stylesheet" href="static/error.css" />
+  <script src="static/script.js"></script>
   <title>Sign In</title>
 </head>
 
 <body>
   <!-- error handling -->
-  <div class="popup-background">
+  <!-- <div class="popup-background">
     <div id="popup" class="popup">
       <h4>{{ error_message }}</h4>
       <p>Please input valid data</p>
@@ -25,23 +25,23 @@
   <script>
     showPopup();
   </script>
-  {% endif %}
-  <!--end error handling-->
+  {% endif %} -->
+  <!--end error handling -->
   
   <!--start header-->
   <header>
     <div class="logo-div">
       <!-- do not forget to change the image to an admin image -->
-      <a class="admin-home-link" href="{{ url_for('adminAddBook') }}"><img class="logo-img" src="../static/images/book_shop.png" /></a>
+      <a class="admin-home-link" href="#"><img class="logo-img" src="static/images/book_shop.png" /></a>
     </div>
     <!--logo-->
     <div class="links">
       <ul class="pages-ul">
         <li>
-          <a href="{{ url_for('bookver') }}" class="sing-up"> Requests </a>
+          <a href="bookVerfication.html" class="sing-up"> Requests </a>
         </li>
         <li>
-          <a href="{{ url_for('signup') }}" class="sing-up"> log out </a>
+          <a href="signin.html" class="sing-up"> log out </a>
         </li>
       </ul>
       
@@ -59,24 +59,18 @@
     </div>
 
     <div class="addBookForm-div">
-      <form class="addBookForm" action="{{url_for('adminAddBook')}}" method="post">
+      <form class="addBookForm" action="#" method="post">
 
         <div class="form-row">
           <label class="coLabel">title</label>
-          {% if title %}
-            <input placeholder="Enter Book Title" value="{{title}}" type="text" name="title">
-          {% else %}
-            <input placeholder="Enter Book Title" type="text" name="title">
-          {%endif%}
+          <input placeholder="Enter Book Title" type="text" name="title">
+          
         </div>
 
         <div class="form-row">
           <label class="coLabel">author</label>
-          {% if author%}
-            <input placeholder="Enter the name of the author" value="{{author}}" type="text" name="author">
-          {% else %}
-            <input placeholder="Enter the name of the author" type="text" name="author">
-          {%endif%}
+          <input placeholder="Enter the name of the author" type="text" name="author">
+          
         </div>
 
         <div class="form-row">
@@ -87,13 +81,8 @@
         <div class="form-row">
           <label class="coLabel">category</label>
           <select class="selectionTag" name="category">
-            {% for cat in categories %}
-              {% if cat['title'] == category%}
-                <option selected class="theOption" value="cat['id']">{{cat['title']}}</option>
-              {% else %}
-                <option class="theOption" value="cat['id']">{{cat['title']}}</option>
-              {% endif %}
-            {% endfor %}
+            <!-- <option class="theOption" value="cat['id']">{{cat['title']}}</option> -->
+            <option class="theOption" value="cat['id']">category name</option>
             <!-- <option class="theOption" value="2">cat 2</option> -->
           </select>
         </div>
@@ -102,19 +91,11 @@
           <div class="priceAndQuantity">
             <div>
               <label class="coLabel">price</label>
-              {% if price %}
-                <input placeholder="Enter price of the book" value="{{price}}" type="text" name="price">
-              {% else %}
-                <input placeholder="Enter price of the book" type="text" name="price">
-              {%endif%}
+              <input placeholder="Enter price of the book" type="text" name="price">
             </div>
             <div>
               <label class="coLabel">quantity</label>
-              {% if quantity %}
-                <input placeholder="Enter quantity of the book" value="{{quantity}}" type="text" name="quantity">
-              {% else %}
-                <input placeholder="Enter quantity of the book" type="text" name="quantity">
-              {%endif%}
+              <input placeholder="Enter quantity of the book" type="text" name="quantity">
             </div>
           </div>
         </div>
@@ -122,11 +103,7 @@
         <div class="form-row">
           <label class="coLabel">Description</label>
           <br>
-          {% if description%}
-          <textarea id="descriptionArea" placeholder="There is no description yet." class="theDesc" maxlength="250" name="description">{{description}}</textarea>
-          {% else %}
           <textarea id="descriptionArea" placeholder="There is no description yet." class="theDesc" maxlength="250" name="description"></textarea>
-          {%endif%}
         </div>
 
         <div class="form-row">
