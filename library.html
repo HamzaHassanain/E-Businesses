@@ -14,8 +14,8 @@
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <!--  -->
-  <link rel="stylesheet" href="../static/library.css" />
-  <link rel="stylesheet" href="../static/error.css" />
+  <link rel="stylesheet" href="static/library.css" />
+  <link rel="stylesheet" href="static/error.css" />
   <script src="static/script.js"></script>
   <title>Book Store</title>
   <script>
@@ -48,32 +48,27 @@
   <header>
     <!-- navbar -->
     <nav>
-      <a href="{{url_for('home')}}"><img src="../static/images/logo.svg" alt="Logo" /></a>
+      <a href="home.html"><img src="static/images/logo.svg" alt="Logo" /></a>
 
       <div class="sing-log">
-        {% if session['user_id'] %}
         <!-- <button onclick="redirectToLink('/logout')" class="sing">Log Out</button> -->
         <ul class="nav-info">
           <li>
-            <a href="{{url_for('profile')}}">
-              <img src="../static/images/user_1.png" alt="Profile" />
+            <a href="profile.html">
+              <img src="static/images/user_1.png" alt="Profile" />
             </a>
           </li>
           <li>
-            <a href="{{url_for('cart')}}">
-              <img src="../static/images/shopping_cart_1.png" alt="Store" />
+            <a href="cart.html">
+              <img src="static/images/shopping_cart_1.png" alt="Store" />
             </a>
           </li>
           <li>
-            <a href="{{url_for('logout')}}">
-              <img src="../static/images/logout_39px.png" alt="logout" />
+            <a href="signin.html">
+              <img src="static/images/logout_39px.png" alt="logout" />
             </a>
           </li>
         </ul>
-        {% else %}
-        <button onclick="redirectToLink('/signup')" class="sing">Sing Up</button>
-        <button onclick="redirectToLink('/signup')" class="log">Log In</button>
-        {% endif %}
       </div>
     </nav>
     <!--  -->
@@ -84,15 +79,10 @@
         <p>Please input valid data</p>
       </div>
     </div>
-    {% if invalid %}
-    <script>
-      showPopup();
-    </script>
-    {% endif %}
     <!--end error handling-->
     <!-- search -->
     <div class="search">
-      <form action="{{url_for('library')}}" method="post">
+      <form action="" method="post">
         <button><i class="material-icons">search</i></button>
         <input type="search" name="search" placeholder="Search for a book ......." />
       </form>
@@ -104,20 +94,30 @@
     <aside>
       <nav>
         <p>Categories</p>
-        {% for category in categories %}
-        <a href="{{url_for('library', category_id=category['category_id'])}}" class="nav-link">
-          <span>{{category['title']}}</span>
+        <a href="book.html" class="nav-link">
+          <span> category title </span>
         </a>
-        {% endfor %}
+
+        <a href="book.html" class="nav-link">
+          <span> category title </span>
+        </a>
+
+        <a href="book.html" class="nav-link">
+          <span> category title </span>
+        </a>
+
+        <a href="book.html" class="nav-link">
+          <span> category title </span>
+        </a>
       </nav>
     </aside>
 
     <main>
-      <h1>{{ search }}</h1>
+      <h1>word you are searching for</h1>
       <div class="books-container">
         <!-- books -->
-        {% for book in books %}
-        <div data-id="{{book['book_id']}}" class="book goToBook">
+        
+        <div data-id="book_id" class="book goToBook">
           <form class="add-to-cart">
             <button>
               <i class="material-icons">add_shopping_cart</i>
@@ -125,7 +125,7 @@
           </form>
 
           <div class="img-book">
-            <img src="{{ '../' + book['image'] }}" alt="" />
+            <img src="static/images/book.png" alt="" />
           </div>
 
           <div class="stars">
@@ -138,32 +138,305 @@
           <div class="book-details">
             <div class="title">
               <a href="" class="book-title">
-                {{ book['title'] }}
+                book title
               </a>
             </div>
             <div class="title">
-              <a href="" class="book-creator"> {{ book['author'] }} </a>
+              <a href="" class="book-creator"> book author </a>
             </div>
             <div class="title">
               <p class="explain">
-                {{ book['subscript'] }}
+                 book subscript 
               </p>
             </div>
             <div class="price">
-              <span>{{ book['price'] }}</span>
+              <span> book price </span>
             </div>
           </div>
         </div>
-        {% endfor %}
+
+
+        <div data-id="book_id" class="book goToBook">
+          <form class="add-to-cart">
+            <button>
+              <i class="material-icons">add_shopping_cart</i>
+            </button>
+          </form>
+
+          <div class="img-book">
+            <img src="static/images/book.png" alt="" />
+          </div>
+
+          <div class="stars">
+            <i class="fa fa-star checked"></i>
+            <i class="fa fa-star checked"></i>
+            <i class="fa fa-star checked"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+          </div>
+          <div class="book-details">
+            <div class="title">
+              <a href="" class="book-title">
+                book title
+              </a>
+            </div>
+            <div class="title">
+              <a href="" class="book-creator"> book author </a>
+            </div>
+            <div class="title">
+              <p class="explain">
+                 book subscript 
+              </p>
+            </div>
+            <div class="price">
+              <span> book price </span>
+            </div>
+          </div>
+        </div>
+
+
+        <div data-id="book_id" class="book goToBook">
+          <form class="add-to-cart">
+            <button>
+              <i class="material-icons">add_shopping_cart</i>
+            </button>
+          </form>
+
+          <div class="img-book">
+            <img src="static/images/book.png" alt="" />
+          </div>
+
+          <div class="stars">
+            <i class="fa fa-star checked"></i>
+            <i class="fa fa-star checked"></i>
+            <i class="fa fa-star checked"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+          </div>
+          <div class="book-details">
+            <div class="title">
+              <a href="" class="book-title">
+                book title
+              </a>
+            </div>
+            <div class="title">
+              <a href="" class="book-creator"> book author </a>
+            </div>
+            <div class="title">
+              <p class="explain">
+                 book subscript 
+              </p>
+            </div>
+            <div class="price">
+              <span> book price </span>
+            </div>
+          </div>
+        </div>
+
+
+        <div data-id="book_id" class="book goToBook">
+          <form class="add-to-cart">
+            <button>
+              <i class="material-icons">add_shopping_cart</i>
+            </button>
+          </form>
+
+          <div class="img-book">
+            <img src="static/images/book.png" alt="" />
+          </div>
+
+          <div class="stars">
+            <i class="fa fa-star checked"></i>
+            <i class="fa fa-star checked"></i>
+            <i class="fa fa-star checked"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+          </div>
+          <div class="book-details">
+            <div class="title">
+              <a href="" class="book-title">
+                book title
+              </a>
+            </div>
+            <div class="title">
+              <a href="" class="book-creator"> book author </a>
+            </div>
+            <div class="title">
+              <p class="explain">
+                 book subscript 
+              </p>
+            </div>
+            <div class="price">
+              <span> book price </span>
+            </div>
+          </div>
+        </div>
+
+
+        <div data-id="book_id" class="book goToBook">
+          <form class="add-to-cart">
+            <button>
+              <i class="material-icons">add_shopping_cart</i>
+            </button>
+          </form>
+
+          <div class="img-book">
+            <img src="static/images/book.png" alt="" />
+          </div>
+
+          <div class="stars">
+            <i class="fa fa-star checked"></i>
+            <i class="fa fa-star checked"></i>
+            <i class="fa fa-star checked"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+          </div>
+          <div class="book-details">
+            <div class="title">
+              <a href="" class="book-title">
+                book title
+              </a>
+            </div>
+            <div class="title">
+              <a href="" class="book-creator"> book author </a>
+            </div>
+            <div class="title">
+              <p class="explain">
+                 book subscript 
+              </p>
+            </div>
+            <div class="price">
+              <span> book price </span>
+            </div>
+          </div>
+        </div>
+
+
+        <div data-id="book_id" class="book goToBook">
+          <form class="add-to-cart">
+            <button>
+              <i class="material-icons">add_shopping_cart</i>
+            </button>
+          </form>
+
+          <div class="img-book">
+            <img src="static/images/book.png" alt="" />
+          </div>
+
+          <div class="stars">
+            <i class="fa fa-star checked"></i>
+            <i class="fa fa-star checked"></i>
+            <i class="fa fa-star checked"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+          </div>
+          <div class="book-details">
+            <div class="title">
+              <a href="" class="book-title">
+                book title
+              </a>
+            </div>
+            <div class="title">
+              <a href="" class="book-creator"> book author </a>
+            </div>
+            <div class="title">
+              <p class="explain">
+                 book subscript 
+              </p>
+            </div>
+            <div class="price">
+              <span> book price </span>
+            </div>
+          </div>
+        </div>
+
+
+        <div data-id="book_id" class="book goToBook">
+          <form class="add-to-cart">
+            <button>
+              <i class="material-icons">add_shopping_cart</i>
+            </button>
+          </form>
+
+          <div class="img-book">
+            <img src="static/images/book.png" alt="" />
+          </div>
+
+          <div class="stars">
+            <i class="fa fa-star checked"></i>
+            <i class="fa fa-star checked"></i>
+            <i class="fa fa-star checked"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+          </div>
+          <div class="book-details">
+            <div class="title">
+              <a href="" class="book-title">
+                book title
+              </a>
+            </div>
+            <div class="title">
+              <a href="" class="book-creator"> book author </a>
+            </div>
+            <div class="title">
+              <p class="explain">
+                 book subscript 
+              </p>
+            </div>
+            <div class="price">
+              <span> book price </span>
+            </div>
+          </div>
+        </div>
+
+
+        <div data-id="book_id" class="book goToBook">
+          <form class="add-to-cart">
+            <button>
+              <i class="material-icons">add_shopping_cart</i>
+            </button>
+          </form>
+
+          <div class="img-book">
+            <img src="static/images/book.png" alt="" />
+          </div>
+
+          <div class="stars">
+            <i class="fa fa-star checked"></i>
+            <i class="fa fa-star checked"></i>
+            <i class="fa fa-star checked"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+          </div>
+          <div class="book-details">
+            <div class="title">
+              <a href="" class="book-title">
+                book title
+              </a>
+            </div>
+            <div class="title">
+              <a href="" class="book-creator"> book author </a>
+            </div>
+            <div class="title">
+              <p class="explain">
+                 book subscript 
+              </p>
+            </div>
+            <div class="price">
+              <span> book price </span>
+            </div>
+          </div>
+        </div>
+        
 
         <!-- end of books -->
       </div>
     </main>
   </div>
 
-  <!-- <footer>
+  <footer>
     <div class="copy">Copyrights &copy; www.bookshop.com</div>
-  </footer> -->
+  </footer>
 </body>
 
 </html>
