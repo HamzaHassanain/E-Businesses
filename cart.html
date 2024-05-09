@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8" />
   <title>Cart</title>
-  <link rel="icon" href="../static/images/book_shop.png" />
-  <link rel="stylesheet" href="../static/PlaceOrder.css" />
-  <link rel="stylesheet" href="../static/style_2.css" />
+  <link rel="icon" href="static/images/book_shop.png" />
+  <link rel="stylesheet" href="static/PlaceOrder.css" />
+  <link rel="stylesheet" href="static/style_2.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="../static/error.css" />
-  <script src="../static/script.js"></script>
+  <link rel="stylesheet" href="static/error.css" />
+  <script src="static/script.js"></script>
 </head>
 
 <body>
@@ -20,51 +20,51 @@
       <p>Please input valid data</p>
     </div>
   </div>
-  {% if invalid %}
-  <script>
-    showPopup();
-  </script>
-  {% endif %}
   <!--end error handling-->
   <header>
     <nav>
       <div class="left-navbar">
         <ul>
           <li>
-            <a href="{{url_for('home')}}"><img src="../static/images/book_shop.png" alt="Book" /></a>
+            <a href="home.html"><img src="static/images/book_shop.png" alt="Book" /></a>
           </li>
         </ul>
       </div>
       <div class="right-navbar">
         <ul>
           <li>
-            <a href="{{url_for('profile')}}"><img src="../static/images/user_1.png" alt="Profile" /></a>
+            <a href="profile.html"><img src="static/images/user_1.png" alt="Profile" /></a>
           </li>
           <li>
-            <a href="{{url_for('cart')}}">
-              <img src="../static/images/shopping_cart_1.png" alt="Store" />
+            <a href="cart.html">
+              <img src="static/images/shopping_cart_1.png" alt="Store" />
             </a>
           </li>
         </ul>
       </div>
     </nav>
   </header>
-  <form action="{{url_for('cart')}}" method="post">
+  <form action="" method="post">
     <div class="sub-title">
       <h1>Shooping Cart</h1>
     </div>
     <div class="container">
       <!--cart book-->
-      {% for book in books %}
+
+
+
+
+
+
       <div class="book">
         <div class="image">
-          <img src="{{ '../../' + book['image'] }}" alt="Book" />
+          <img src="static\images\book.png" alt="Book" />
         </div>
         <div class="info">
           <div class="title">
-            <h1>{{ book['title'] }}</h1>
+            <h1>book title</h1>
           </div>
-          <div class="author">By : {{ book['author'] }}</div>
+          <div class="author">By : book author</div>
           <div class="rate">
             <ul>
               <li class="fa fa-star checked"></li>
@@ -76,7 +76,7 @@
           </div>
           <div class="summary">
             <p>
-              {{ book['subscript'] }}
+              small description about the book.
             </p>
           </div>
         </div>
@@ -84,39 +84,88 @@
         <div class="card">
           <div class="price">
             <span>Price:</span>
-            <span class="mid">{{ book['price'] }}$</span>
+            <span class="mid">book price$</span>
           </div>
 
           <div class="quantity">
             <label for="quantity">Quantity:</label>
-            {% set qname = 'quantity_' + book['book_id'] | string %}
-            <input type="number" name="{{qname}}" id="quantity" min="1" value="{{ book['quantity'] }}" />
+            <input type="number" name="book_id" id="quantity+book_id" min="1" value="book_quantity" />
           </div>
           <div class="buttons-group">
-            <button type="submit" formaction="{{ url_for('remove_from_cart', book_id=book['book_id']) }}"
+            <button type="submit" formaction=""
               formmethod="post" formnovalidate class="rmv-btn">Remove From Cart</button>
           </div>
         </div>
       </div>
-      {% endfor %}
-      <!-- if cart is free -->
-      {% if books | length == 0 %}
-      <div>
-        <img src="../static/images/empty_cart.jpg" alt="Empty Cart" height="500px" />
+
+
+
+
+
+
+      <div class="book">
+        <div class="image">
+          <img src="static\images\book.png" alt="Book" />
+        </div>
+        <div class="info">
+          <div class="title">
+            <h1>book title</h1>
+          </div>
+          <div class="author">By : book author</div>
+          <div class="rate">
+            <ul>
+              <li class="fa fa-star checked"></li>
+              <li class="fa fa-star checked"></li>
+              <li class="fa fa-star checked"></li>
+              <li class="fa fa-star checked"></li>
+              <li class="fa fa-star"></li>
+            </ul>
+          </div>
+          <div class="summary">
+            <p>
+              small description about the book.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="price">
+            <span>Price:</span>
+            <span class="mid">book price$</span>
+          </div>
+
+          <div class="quantity">
+            <label for="quantity">Quantity:</label>
+            <input type="number" name="book_id" id="quantity+book_id" min="1" value="book_quantity" />
+          </div>
+          <div class="buttons-group">
+            <button type="submit" formaction=""
+              formmethod="post" formnovalidate class="rmv-btn">Remove From Cart</button>
+          </div>
+        </div>
       </div>
-      {% endif %}
+
+
+
+
+
+
+      <!-- if cart is free -->
+      <div style="display: none;">
+        <img src="static/images/empty_cart.jpg" alt="Empty Cart" height="500px" />
+      </div>
       <!-- end of empty cart -->
+
     </div>
 
-    {% if books | length != 0 %}
-    <button type="submit" formaction="{{url_for('save_cart')}}" class="save-cart" formnovalidate formmethod="post">Save
-      Changes</button>
-    {% endif %}
+    <!-- if cart is not empty -->
+    <button type="submit" formaction="" class="save-cart" formnovalidate formmethod="post">Save Changes</button>
+    <!-- end of empty cart -->
 
     <div class="buy">
       <div class="group_flex">
-        <div>Total Price: {{ total_price }}$</div>
-        <div>Total: {{ total_quantity }}</div>
+        <div>Total Price: price$</div>
+        <div>Total: total_quantity </div>
       </div>
 
       <div class="container">
