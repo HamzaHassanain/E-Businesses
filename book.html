@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <title>Book</title>
-  <link rel="icon" href="../static/images/book_shop.png" />
-  <link rel="stylesheet" href="../static/style1.css" />
-  <link rel="stylesheet" href="../static/error.css" />
-  <script src="../static/script.js"></script>
+  <link rel="icon" href="static/images/book_shop.png" />
+  <link rel="stylesheet" href="static/style1.css" />
+  <link rel="stylesheet" href="static/error.css" />
+  <script src="static/script.js"></script>
   <!-- Font Awesome Icon Library -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link
@@ -24,7 +24,7 @@
 
 <body>
   <!-- error handling -->
-  <div class="popup-background">
+  <!-- <div class="popup-background">
     <div id="popup" class="popup">
       <h4>{{ error_message }}</h4>
       <p>Please input valid data</p>
@@ -34,25 +34,25 @@
   <script>
     showPopup();
   </script>
-  {% endif %}
+  {% endif %} -->
   <!--end error handling-->
   <header>
     <nav>
       <div class="left-navbar">
         <ul>
           <li>
-            <a href="{{ url_for('home') }}"><img src="../static/images/book_shop.png" alt="Book" /></a>
+            <a href="{{ url_for('home') }}"><img src="static/images/book_shop.png" alt="Book" /></a>
           </li>
         </ul>
       </div>
       <div class="right-navbar">
         <ul>
           <li>
-            <a href="{{ url_for('profile') }}"><img src="../static/images/user_1.png" alt="Profile" /></a>
+            <a href="{{ url_for('profile') }}"><img src="static/images/user_1.png" alt="Profile" /></a>
           </li>
           <li>
             <a href="{{ url_for('cart') }}">
-              <img src="../static/images/shopping_cart_1.png" alt="Store" />
+              <img src="static/images/shopping_cart_1.png" alt="Store" />
             </a>
           </li>
         </ul>
@@ -62,11 +62,11 @@
 
   <div class="book">
     <div class="image">
-      <img src="{{ '../' + bookInfo['image']}}" alt="" />
+      <img src="static\images\book.png" alt="" />
     </div>
     <div class="info">
-      <div class="title">{{bookInfo['title']}}</div>
-      <div class="author">BY : {{bookInfo['author']}}</div>
+      <div class="title">title</div>
+      <div class="author">BY : author</div>
       <div class="rate">
         <ul>
           <li class="fa fa-star checked"></li>
@@ -78,7 +78,7 @@
       </div>
       <div class="description">
         <p>
-          {{ bookInfo["subscript"] }}
+          small description about the book.
         </p>
       </div>
     </div>
@@ -91,7 +91,7 @@
     <div class="card">
       <div class="price">
         <span>Price:</span>
-        <span> {{ bookInfo['price'] }} $</span>
+        <span> book price $</span>
       </div>
 
       <div class="quantity">
@@ -107,7 +107,7 @@
 
       <!-- action="{{url_for('add_to_cart', book_id = bookInfo['book_id'])}}" 
             if you want to make book page return the user to the cart page-->
-      <form action="{{url_for('book', bookId = bookInfo['book_id'])}}" id="changeQuantity" method="post"
+      <form action="" id="changeQuantity" method="post"
         class="buttons-group">
         <button form="changeQuantity" class="add-btn" type="submit">Add to Cart</button>
         <!-- <button class="buy-btn">Buy Now</button> -->
@@ -125,10 +125,10 @@
   <div class="catigories">
     <div class="head">Similar Books</div>
     <div class="books">
-      {% for book in simBooks %}
+      
       <div class="book">
         <div class="img-book">
-          <img src="{{ '../' + book['image']}}" alt="" />
+          <img src="static\images\book.png" alt="" />
         </div>
         <div class="stars">
           <i class="fa fa-star checked"></i>
@@ -140,23 +140,96 @@
         <div class="book-details">
           <div class="title">
             <a href="" class="book-title">
-              {{book['title']}}
+              title
             </a>
           </div>
           <div class="title">
-            <a href="" class="book-creator"> {{book['author']}} </a>
+            <a href="" class="book-creator"> author </a>
           </div>
           <div class="title">
             <p class="explain">
-              {{book['subscript']}}
+              subscript
             </p>
           </div>
           <div class="price">
-            <span>${{ book['price'] }}</span>
+            <span>$price</span>
           </div>
         </div>
       </div>
-      {% endfor %}
+      
+
+
+
+      
+      <div class="book">
+        <div class="img-book">
+          <img src="static\images\book.png" alt="" />
+        </div>
+        <div class="stars">
+          <i class="fa fa-star checked"></i>
+          <i class="fa fa-star checked"></i>
+          <i class="fa fa-star checked"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <div class="book-details">
+          <div class="title">
+            <a href="" class="book-title">
+              title
+            </a>
+          </div>
+          <div class="title">
+            <a href="" class="book-creator"> author </a>
+          </div>
+          <div class="title">
+            <p class="explain">
+              subscript
+            </p>
+          </div>
+          <div class="price">
+            <span>$price</span>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+      <div class="book">
+        <div class="img-book">
+          <img src="static\images\book.png" alt="" />
+        </div>
+        <div class="stars">
+          <i class="fa fa-star checked"></i>
+          <i class="fa fa-star checked"></i>
+          <i class="fa fa-star checked"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <div class="book-details">
+          <div class="title">
+            <a href="" class="book-title">
+              title
+            </a>
+          </div>
+          <div class="title">
+            <a href="" class="book-creator"> author </a>
+          </div>
+          <div class="title">
+            <p class="explain">
+              subscript
+            </p>
+          </div>
+          <div class="price">
+            <span>$price</span>
+          </div>
+        </div>
+      </div>
+
+
+
     </div>
   </div>
   <div class="footer">
