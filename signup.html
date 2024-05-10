@@ -3,82 +3,92 @@
 <!DOCTYPE html>
 
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="static/SignUp.css" />
+    <link rel="stylesheet" href="static/error.css" />
+    <link rel="icon" href="static/images/book_shop.png" />
+    <script src="static/script.js"></script>
+    <title>Sign Up</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="static/SignUp.css" />
-  <link rel="stylesheet" href="static/error.css" />
-  <link rel="icon" href="static/images/book_shop.png" />
-  <script src="static/script.js"></script>
-  <title>Sign Up</title>
-</head>
+  <body>
+    <div class="header">
+      <!--start header-->
 
-<body>
-  <div class="header">
-    <!--start header-->
+      <header>
+        <a href="home.html">
+          <img
+            class="logo"
+            src="static/images/bookshop.png"
+            width="60PX"
+            height="60PX"
+          />
+        </a>
+        <!--logo-->
 
-    <header>
-      <a href="home.html">
-        <img class="logo" src="static/images/bookshop.png" width="60PX" height="60PX" />
-      </a>
-      <!--logo-->
+        <a href="signin.html" class="sing-in">
+          <!--button sing in-->
+          <span> Sign In </span>
+        </a>
 
-      <a class="sing-in" href="signin.html">
-        <!--button sing in-->
-        <span> Sign In </span>
-      </a>
+        <a href="signup.html" class="sing-up">
+          <!--button sing up-->
+          <span> Sign Up </span>
+        </a>
+      </header>
+    </div>
+    <!--end header-->
 
-      <a class="sing-up" href="signup.html">
-        <!--button sing up-->
-        <span> Sign Up </span>
-      </a>
-    </header>
-  </div>
-  <!--end header-->
+    <div class="container">
+      <!--start container-->
 
-  <div class="container">
-    <!--start container-->
+      <form id="form" action="">
+        <!--start form-->
 
-    <form action="signup.html" method="post">
-      <!--start form-->
+        <h2>Sign Up</h2>
 
-      <h2>Sign Up</h2>
+        <div class="input-control">
+          <label for="username">Full Name:</label>
+          <input type="text" id="username" name="fullname" />
+          <div class="error"></div>
+        </div>
 
-      <label for="Full Name">Full Name:</label>
-      <!--input filed for full name-->
-      <input type="text" id="Full Name" name="fullname" required />
+        <div class="input-control">
+          <label for="Email">Email:</label>
+          <input type="email" id="email" name="email" />
+          <div class="error"></div>
+        </div>
 
-      <label for="Email">Email:</label>
-      <!--input filed for email-->
-      <input type="email" id="Email" name="email" required />
+        <div class="input-control">
+          <label for="pass1">Password:</label>
+          <input type="password" id="pass1" name="password" />
+          <div class="error"></div>
+        </div>
 
-      <label for="pass1">Password:</label>
-      <!--input filed for password-->
-      <input type="password" id="pass1" name="password" required />
+        <div class="input-control">
+          <label for="pass2">Confirm Password:</label>
+          <input type="password" id="pass2" name="confirm" />
+          <div class="error"></div>
+        </div>
 
-      <label for="pass2">Confirm Password:</label>
-      <!--input filed for confirm password-->
-      <input type="password" id="pass2" name="confirm" required />
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+    <!--end container-->
 
-      <button type="submit">Sign Up</button>
-      <!--button submit form-->
-    </form>
-    <!--end form-->
-  </div>
-  <!--end container-->
+    <div class="footer">
+      <!--start footer-->
 
-  <div class="footer">
-    <!--start footer-->
-
-    <footer>
-      <p>copyrights &copy; www.bookshop.com</p>
-      <!--paragraph for footer-->
-    </footer>
-  </div>
-  <!--end footer-->
-</body>
-
+      <footer>
+        <p>copyrights &copy; www.bookshop.com</p>
+        <!--paragraph for footer-->
+      </footer>
+    </div>
+    <!--end footer-->
+    <script src="static/sign-up.js"></script>
+  </body>
 </html>
 
 <!--.............................................................. #_The_End_._ .........................................................................  -->

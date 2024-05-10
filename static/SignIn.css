@@ -236,4 +236,34 @@ button:hover {
   padding: 0;
 }*/
 
+
+.input-control {
+  margin-top: 2px;
+  /* display: flex;
+  flex-direction: column;
+  gap: 10px; */
+}
+
+.input-control.success input {
+  border-color: #09c372;
+}
+
+.input-control.error input:focus {
+  outline: 0;
+}
+
+.input-control.error input {
+  border-color: #ff3860;
+}
+
+.input-control.error {
+  border-color: #ff3860;
+  color: red;
+  margin-bottom: 2px;  
+
+  /* font-size: 9px; */
+  /* height: 13px; */
+}
+
+
 /* ------------------------------------------------------------------ #The_End. ---------------------------------------------------------------------------*/

@@ -3,86 +3,80 @@
 <!DOCTYPE html>
 
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="static/images/book_shop.png" />
+    <link rel="stylesheet" href="static/SignIn.css" />
+    <link rel="stylesheet" href="static/error.css" />
+    <script src="static/script.js"></script>
+    <title>Sign In</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="static/images/book_shop.png" />
-  <link rel="stylesheet" href="static/SignIn.css" />
-  <link rel="stylesheet" href="static/error.css" />
-  <script src="static/script.js"></script>
-  <title>Sign In</title>
-</head>
+  <body>
+    <div class="header">
+      <!--start header-->
 
-<body>
-  <div class="header">
-    <!--start header-->
+      <header>
+        <a href="home.html">
+          <img
+            class="logo"
+            src="static/images/bookshop.png"
+            width="60PX"
+            height="60PX"
+          />
+        </a>
+        <!--logo-->
 
-    <header>
-      <a href="home.html">
-        <img class="logo" src="static/images/bookshop.png" width="60PX" height="60PX" />
-      </a>
-      <!--logo-->
+        <a href="signin.html" class="sing-in">
+          <!--button sing in-->
+          <span> Sign In </span>
+        </a>
 
-      <a href="signin.html" class="sing-in">
-        <!--button sing in-->
-        <span> Sign In </span>
-      </a>
-
-      <a href="signup.html" class="sing-up">
-        <!--button sing up-->
-        <span> Sign Up </span>
-      </a>
-    </header>
-  </div>
-  <!--end header-->
-  <!-- error handling -->
-  <div class="popup-background">
-    <div id="popup" class="popup">
-      <h4>{{ error_message }}</h4>
-      <p>Please input valid data</p>
+        <a href="signup.html" class="sing-up">
+          <!--button sing up-->
+          <span> Sign Up </span>
+        </a>
+      </header>
     </div>
-  </div>
-  {% if invalid %}
-  <script>
-    showPopup();
-  </script>
-  {% endif %}
-  <!--end error handling-->
-  <div class="container">
-    <!--start container-->
+    <!--end header-->
 
-    <form action="signin.html" method="post">
-      <!--start form-->
+    <div class="container">
+      <!--start container-->
 
-      <h2>Sign In</h2>
+      <form id="form" action="">
+        <!--start form-->
 
-      <label for="Email">Email:</label>
-      <!--input filed for email-->
-      <input type="email" id="Email" name="email" required />
+        <h2>Sign In</h2>
 
-      <label for="pass">Password:</label>
-      <!--input filed for password-->
-      <input type="password" id="pass" name="password" required />
+        <div class="input-control">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" />
+          <div class="error"></div>
+        </div>
 
-      <button type="submit">Sign In</button>
-      <!--button submit form-->
-    </form>
-    <!--end form-->
-  </div>
-  <!--end container-->
+        <div class="input-control">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" />
+          <div class="error"></div>
+        </div>
 
-  <div class="footer">
-    <!--start footer-->
+        <button type="submit">Sign In</button>
+      </form>
+      <!--end form-->
+    </div>
+    <!--end container-->
+    <div class="footer">
+      <!--start footer-->
 
-    <footer>
-      <p>copyrights @ www.bookshop.com</p>
-      <!--paragraph for footer-->
-    </footer>
-  </div>
-  <!--end footer-->
-</body>
-
+      <footer>
+        <p>copyrights @ www.bookshop.com</p>
+        <!--paragraph for footer-->
+      </footer>
+    </div>
+    <!--end footer-->
+    <script src="static/sign-in.js"></script>
+  </body>
 </html>
 
 <!--.............................................................. #_The_End_._ .........................................................................  -->
