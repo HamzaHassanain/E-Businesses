@@ -9,16 +9,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="static/adminAddBook.css" />
   <link rel="stylesheet" href="static/error.css" />
-  <script src="static/script.js"></script>
-  <title>Sign In</title>
+  
+  <title>admin add book</title>
 </head>
 
 <body>
   <!-- error handling -->
   <div class="popup-background">
     <div id="popup" class="popup">
-      <h4>{{ error_message }}</h4>
-      <p>Please input valid data</p>
+      <h4 id="messageTitle"></h4>
+      <p id="messageDesc">Please input valid data</p>
     </div>
   </div>
   <!--end error handling -->
@@ -54,17 +54,17 @@
     </div>
 
     <div class="addBookForm-div">
-      <form class="addBookForm" action="" method="post">
+      <form class="addBookForm">
 
         <div class="form-row">
           <label class="coLabel">title</label>
-          <input placeholder="Enter Book Title" type="text" name="title">
+          <input placeholder="Enter Book Title" id="bookTitle" type="text" name="title">
           
         </div>
 
         <div class="form-row">
           <label class="coLabel">author</label>
-          <input placeholder="Enter the name of the author" type="text" name="author">
+          <input placeholder="Enter the name of the author" id="bookAuthor" type="text" name="author">
           
         </div>
 
@@ -75,9 +75,10 @@
 
         <div class="form-row">
           <label class="coLabel">category</label>
-          <select class="selectionTag" name="category">
+          <select id="categoryName" class="selectionTag" name="category">
             <!-- <option class="theOption" value="cat['id']">{{cat['title']}}</option> -->
-            <option class="theOption" value="cat['id']">category name</option>
+            <option selected class="theOption" value="category_name">category name</option>
+            <option class="theOption" value="category_name">category name</option>
             <!-- <option class="theOption" value="2">cat 2</option> -->
           </select>
         </div>
@@ -86,11 +87,11 @@
           <div class="priceAndQuantity">
             <div>
               <label class="coLabel">price</label>
-              <input placeholder="Enter price of the book" type="text" name="price">
+              <input id="bookPrice" placeholder="Enter price of the book" type="text" name="price">
             </div>
             <div>
               <label class="coLabel">quantity</label>
-              <input placeholder="Enter quantity of the book" type="text" name="quantity">
+              <input id="bookQuantity" placeholder="Enter quantity of the book" type="text" name="quantity">
             </div>
           </div>
         </div>
@@ -102,7 +103,7 @@
         </div>
 
         <div class="form-row">
-          <input class="submit-btn" placeholder="Enter Book Title" type="submit" name="bookTitle">
+          <input id="AddBookBtn" class="submit-btn" placeholder="Enter Book Title" type="button" value="add book" name="bookTitle">
         </div>
 
       </form>
@@ -118,6 +119,12 @@
       <!--paragraph for footer-->
     </footer>
   <!--end footer-->
+
+
+  <script src="static/script.js"></script>
+  <script src="static/adminAddBookJS.js"></script>
+
+
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 list of book to store the books info
-
+local storage name "key" = "bookDataInfo"
 [
 
     {
