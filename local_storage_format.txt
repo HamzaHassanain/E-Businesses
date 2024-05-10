@@ -1,12 +1,12 @@
 list of book to store the books info
-local storage name "key" = "bookDataInfo"
+local storage name "key" = "books"
 [
 
     {
         bookId: ,
         bookTitle: ,
         bookAuthor: ,
-        bookImage: "staticstatic\images\book.png",       // default value --> "staticstatic\images\book.png" ---   "path of image"
+        bookImage: "static\images\book.png",       // default value --> "staticstatic\images\book.png" ---   "path of image"
         bookCategory: 
         bookPrice: ,
         bookQuantity: ,
@@ -15,7 +15,19 @@ local storage name "key" = "bookDataInfo"
 
 ]
 
-
+cart
+[
+    {
+        bookId: ,
+        bookTitle: ,
+        bookAuthor: ,
+        bookImage: "static\images\book.png",       // default value --> "staticstatic\images\book.png" ---   "path of image"
+        bookCategory: 
+        bookPrice: ,
+        bookQuantity: ,
+        bookDescription: 
+    }
+]
 ---------------------------------------------------
 
 

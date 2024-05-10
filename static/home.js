@@ -1,5 +1,6 @@
 import LC from "./LC.js";
 import { BookHTML, GetBooksByCategory } from "./utils.js";
+import { SetEventListeners } from "./SingleAddToCart.js";
 /*
 
         bookId: ,
@@ -34,6 +35,7 @@ function PutCatigories() {
   }
 
   Categories.innerHTML = categoriesHTML;
+  SetEventListeners();
 }
 
 function PutPopularBooks() {
@@ -54,6 +56,7 @@ function PutPopularBooks() {
   popularBooksHTML += booksHTML;
 
   PopularBooks.innerHTML = popularBooksHTML;
+  SetEventListeners();
 }
 
 function random(min, max) {

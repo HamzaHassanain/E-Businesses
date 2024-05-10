@@ -13,7 +13,7 @@ function BookHTML({
   return `
       <div data-id="book_id" class="book goToBook">
       <form action="" method="get" class="add-to-cart">
-        <button>
+        <button class="add-single-book" data-bookid="${bookId}">
           <i class="material-icons">add_shopping_cart</i>
         </button>
       </form>
