@@ -28,8 +28,8 @@ function setDataToLocalStorage(keyName, newValue){
 }
 
 function clearLocalStorge(keyName){
-    // setDataToLocalStorage(keyName, "[]");
-    localStorage.removeItem(keyName);
+    setDataToLocalStorage(keyName, "[]");
+    // localStorage.removeItem(keyName);
 }
 
 function convertTextToJson(JsonObjectAsText){
@@ -41,7 +41,7 @@ function convertJsonToText(JsonObjectAsJson){
 }
 
 function writeJson(ObjectToWrite, orderTotalPrice, orderAddress, orderPhone){
-    ObjectToWrite.push(createNewBookObject(orderTotalPrice, orderAddress, orderPhone));
+    ObjectToWrite.push(createNewOrderObject(orderTotalPrice, orderAddress, orderPhone));
 }
 
 function deleteJson(ObjectToDelete, taskID){
@@ -64,14 +64,15 @@ function getUniqueIDForTasks(){
 
 function createNewOrderObject(orderTotalPrice, orderAddress, orderPhone){
     var id = getUniqueIDForTasks();
-    var orderDate = Date.now();
-    var newBook = {"orderId" : id,
+    let orderDateMain = new Date();
+    var orderDate = orderDateMain.getFullYear() + "-" + orderDateMain.getMonth() + "-" + orderDateMain.getDate();
+    var newOrder = {"orderId" : id,
                 "orderTotalPrice" : orderTotalPrice,
                 "orderAddress" : orderAddress, 
                 "orderPhone" : orderPhone, 
                 "orderDate" : orderDate
                 };
-    return newBook;
+    return newOrder;
 }
 
 function saveEndOprationForTasks(tasks_storage_key_name, tasksInfoObject){
@@ -97,8 +98,7 @@ function hidePopup() {
 
 // ---------------------------------------------------------------
 
-let localStorageKeyNameCart = "cart";
-let localStorageKeyNameOrders = "orders";
+
 
 function verificateData(data, isAsText = true, isAsNumber = false){
     if(isAsText){
@@ -110,7 +110,8 @@ function verificateData(data, isAsText = true, isAsNumber = false){
     return true;
 }
 
-
+let localStorageKeyNameCart = "cart";
+let localStorageKeyNameOrders = "orders";
 
 document.addEventListener("DOMContentLoaded", function(){
 
@@ -122,14 +123,15 @@ document.addEventListener("DOMContentLoaded", function(){
         if(!verificateData(addressInput.value)){
             showPopup("address is not valid");
         }
-        else if(!verificateData(phonenumInput.value)){
+        else if(!verificateData(phonenumInput.value, false, true)){
             showPopup("phonenum is not valid");
         }else{
             let cartObject = convertTextToJson(getDataFromLocalStorage(localStorageKeyNameCart));
-            let totalPrice = 0;
+            let totalPrice = Number(0);
             for(let i = 0; i < cartObject.length; i++){
                 totalPrice += Number(cartObject[i].bookQuantity) * Number(cartObject[i].bookPrice);
             }
+            console.log(totalPrice);
             clearLocalStorge(localStorageKeyNameCart);
 
             let orderObject = convertTextToJson(getDataFromLocalStorage(localStorageKeyNameOrders));
