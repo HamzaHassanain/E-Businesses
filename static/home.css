@@ -62,11 +62,10 @@ header nav img {
   background-color: #003a5b;
 }
 
-
-.nav-info{
+.nav-info {
   display: flex;
 }
-.nav-info *{
+.nav-info * {
   margin-right: 10px;
 }
 
@@ -260,33 +259,31 @@ form {
 } */
 /* ///////////////////////////////////////////////// */
 .explain {
-
   /* yousef */
-  
-      color: black;
-      width: 135px;
-      padding: -1px;
-      /* margin: 20px auto;  */
-      /* top: 195px; */
-      /* left: 600px;  */
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 4;  
-      overflow: hidden;
-      text-overflow: ellipsis;
-      position: absolute;
-  
-  }
-  
-  .price {
-    position:absolute;
-    left: 100px;
-    top: 325px;
-  
-    /* display: flex; */
-    /* justify-content: end; */
-  }
-  /* ///////////////////////////////////////////////////////////////// */
+
+  color: black;
+  width: 135px;
+  padding: -1px;
+  /* margin: 20px auto;  */
+  /* top: 195px; */
+  /* left: 600px;  */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: absolute;
+}
+
+.price {
+  position: absolute;
+  left: 100px;
+  top: 325px;
+
+  /* display: flex; */
+  /* justify-content: end; */
+}
+/* ///////////////////////////////////////////////////////////////// */
 
 .price span {
   font-weight: 600;
@@ -336,7 +333,7 @@ footer {
   overflow: hidden;
   border: 3px solid rgba(0, 0, 0, 0.075);
 }
-.book:hover{
+.book:hover {
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.938);
 }
@@ -346,4 +343,8 @@ footer {
 .popular-books {
   padding-top: 50px;
   padding-bottom: 0;
+}
+
+.book-title {
+  font-size: 1.5rem !important;
 }

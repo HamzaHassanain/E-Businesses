@@ -62,10 +62,10 @@ header nav img {
   background-color: #003a5b;
 }
 
-.nav-info{
+.nav-info {
   display: flex;
 }
-.nav-info *{
+.nav-info * {
   margin-right: 10px;
 }
 
@@ -291,33 +291,31 @@ main h1 {
 } */
 /* /////////////////////////////////////////////////// */
 .explain {
-
   /* yousef */
-  
-      color: black;
-      width: 135px;
-      padding: -1px;
-      /* margin: 20px auto;  */
-      /* top: 195px; */
-      /* left: 600px;  */
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 4;  
-      overflow: hidden;
-      text-overflow: ellipsis;
-      position: absolute;
-  
-  }
-  
-  .price {
-    position:absolute;
-    left: 100px;
-    top: 325px;
-  
-    /* display: flex; */
-    /* justify-content: end; */
-  }
-  /* //////////////////////////////////////// */
+
+  color: black;
+  width: 135px;
+  padding: -1px;
+  /* margin: 20px auto;  */
+  /* top: 195px; */
+  /* left: 600px;  */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: absolute;
+}
+
+.price {
+  position: absolute;
+  left: 100px;
+  top: 325px;
+
+  /* display: flex; */
+  /* justify-content: end; */
+}
+/* //////////////////////////////////////// */
 
 .price span {
   font-weight: 600;
@@ -472,4 +470,8 @@ footer {
   font-weight: 600;
   font-size: 20px;
   line-height: 12.1px;
+}
+
+.book-title {
+  font-size: 1.5rem !important;
 }
