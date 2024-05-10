@@ -10,7 +10,7 @@ list of book to store the books info
         bookCategory: 
         bookPrice: ,
         bookQuantity: ,
-        bookDescribtion: 
+        bookDescription: 
     }
 
 ]
