@@ -24,7 +24,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
   </head>
-
   <body>
     <!-- error handling -->
     <div class="popup-background">
@@ -39,7 +38,7 @@
         <div class="left-navbar">
           <ul>
             <li>
-              <a href="{{ url_for('home') }}"
+              <a href="index.html"
                 ><img src="static/images/book_shop.png" alt="Book"
               /></a>
             </li>
@@ -48,12 +47,12 @@
         <div class="right-navbar">
           <ul>
             <li>
-              <a href="{{ url_for('profile') }}"
+              <a href="profile.html"
                 ><img src="static/images/user_1.png" alt="Profile"
               /></a>
             </li>
             <li>
-              <a href="{{ url_for('cart') }}">
+              <a href="cart.html">
                 <img src="static/images/shopping_cart_1.png" alt="Store" />
               </a>
             </li>
@@ -68,7 +67,7 @@
       </div>
       <div class="info">
         <div class="title">title</div>
-        <div class="author">BY : author</div>
+        <div class="author">By : author</div>
         <div class="rate">
           <ul>
             <li class="fa fa-star checked"></li>
@@ -97,7 +96,7 @@
             name="quantity"
             id="quantity"
             min="1"
-            value="{{quantity}}"
+            value="1"
           />
         </div>
 
@@ -106,8 +105,13 @@
 
         <!-- action="{{url_for('add_to_cart', book_id = bookInfo['book_id'])}}" 
             if you want to make book page return the user to the cart page-->
-        <form action="" id="changeQuantity" method="post" class="buttons-group">
-          <button form="changeQuantity" class="add-btn" type="submit">
+        <form id="changeQuantity" method="post" class="buttons-group">
+          <button
+            form="changeQuantity"
+            class="add-btn"
+            type="submit"
+            onclick=""
+          >
             Add to Cart
           </button>
           <!-- <button class="buy-btn">Buy Now</button> -->
@@ -130,7 +134,7 @@
             <i class="fa fa-star"></i>
           </div>
           <div class="book-details">
-            <div class="title">
+            <div class="title" onclick="">
               <a href="" class="book-title"> title </a>
             </div>
             <div class="title">
@@ -206,5 +210,6 @@
       </footer>
     </div>
     <script src="static/script.js"></script>
+    <script src="static/cart.js" type="module"></script>
   </body>
 </html>
