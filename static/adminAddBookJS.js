@@ -66,7 +66,7 @@ function createNewBookObject(bookTitle, bookAuthor, bookCategory, bookPrice, boo
     var newBook = {"bookId" : id,
                 "bookTitle" : bookTitle,
                 "bookAuthor" : bookAuthor, 
-                "bookImage" : "staticstatic\images\book.png", 
+                "bookImage" : "staticstatic\\images\\book.png", 
                 "bookCategory" : bookCategory, 
                 "bookPrice" : bookPrice, 
                 "bookQuantity" : bookQuantity, 
@@ -137,6 +137,15 @@ document.addEventListener("DOMContentLoaded", function(){
             // dataObject.push(createNewBookObject(bookTitle, bookAuthor, bookCategory, bookPrice, bookQuantity, bookDescription));
             saveEndOprationForTasks(localStorageKeyName, dataObject);
             console.log(getDataFromLocalStorage(localStorageKeyName));
+
+
+            document.getElementById("bookTitle").value = "";
+            document.getElementById("bookAuthor").value = "";
+            document.getElementsByClassName("theOption") = "";
+            document.getElementById("bookPrice").value = "";
+            document.getElementById("bookQuantity").value = "";
+            document.getElementById("descriptionArea").value = "";
+
         }
 
     });
