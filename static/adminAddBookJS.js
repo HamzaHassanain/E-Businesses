@@ -98,7 +98,7 @@ function hidePopup() {
 
 // ---------------------------------------------------------------
 
-let localStorageKeyName = "bookDataInfo";
+let localStorageKeyName = "books";
 
 function verificateData(data, isAsText = true, isAsNumber = false){
     if(isAsText){
