@@ -66,7 +66,7 @@ function addToCart() {
     e.preventDefault();
     let book = LC.getJSON("books")[takenIndices[0]];
     let quantity = document.querySelector(".quantity input").value;
-    book.quantity = quantity;
+    book.bookQuantity = quantity;
     let cart = LC.getJSON("cart");
     cart.push(book);
     LC.setJSON("cart", cart);
