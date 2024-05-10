@@ -31,5 +31,14 @@ cart
 ---------------------------------------------------
 
 
-
+orders
+[
+    {
+        orderId: ,
+        orderTotalPrice: ,
+        orderAddress: ,
+        orderPhone: ,
+        orderDate: 
+    }
+]
 
