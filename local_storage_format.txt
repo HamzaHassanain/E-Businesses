@@ -1,0 +1,23 @@
+list of book to store the books info
+
+[
+
+    {
+        bookId: ,
+        bookTitle: ,
+        bookAuthor: ,
+        bookImage: "staticstatic\images\book.png",       // default value --> "staticstatic\images\book.png" ---   "path of image"
+        bookCategory: 
+        bookPrice: ,
+        bookQuantity: ,
+        bookDescribtion: 
+    }
+
+]
+
+
+---------------------------------------------------
+
+
+
+
