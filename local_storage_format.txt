@@ -1,0 +1,15 @@
+list of book to store the books info
+
+[
+
+    {
+        bookId: ,
+        bookTitle: ,
+        bookAuthor: ,
+        bookImage: "path",
+        bookPrice: ,
+        bookQuantity: ,
+        bookDescribtion: 
+    }
+
+]
