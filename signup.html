@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="static/SignUp.css" />
   <link rel="stylesheet" href="static/error.css" />
   <link rel="icon" href="static/images/book_shop.png" />
-  <script src="static/script.js"></script>
+  <!-- <script src="static/sign-up-in.js"></script> -->
   <title>Sign Up</title>
 </head>
 
@@ -36,33 +36,52 @@
     </header>
   </div>
   <!--end header-->
-
+  <!-- error handling -->
+  <!-- <div class="popup-background">
+    <div id="popup" class="popup">
+      <h4>{{ error_message }}</h4>
+      <p>Please input valid data</p>
+    </div>
+  </div>
+  {% if invalid %}
+  <script>
+    showPopup();
+  </script> -->
+  <!-- {% endif %} -->
+  <!--end error handling-->
   <div class="container">
     <!--start container-->
 
-    <form action="signup.html" method="post">
+    <form id="form" action="">
       <!--start form-->
 
       <h2>Sign Up</h2>
 
-      <label for="Full Name">Full Name:</label>
-      <!--input filed for full name-->
-      <input type="text" id="Full Name" name="fullname" required />
+      <div class="input-control">
+        <label for="username">Full Name:</label>
+        <input type="text" id="username" name="fullname" />
+        <div class="error"></div>
+      </div>
 
-      <label for="Email">Email:</label>
-      <!--input filed for email-->
-      <input type="email" id="Email" name="email" required />
+      <div class="input-control">
+        <label for="Email">Email:</label>
+        <input type="email" id="email" name="email" />
+        <div class="error"></div>
+      </div>
 
-      <label for="pass1">Password:</label>
-      <!--input filed for password-->
-      <input type="password" id="pass1" name="password" required />
+      <div class="input-control">
+        <label for="pass1">Password:</label>
+        <input type="password" id="pass1" name="password" />
+        <div class="error"></div>
+      </div>
 
-      <label for="pass2">Confirm Password:</label>
-      <!--input filed for confirm password-->
-      <input type="password" id="pass2" name="confirm" required />
+      <div class="input-control">
+        <label for="pass2">Confirm Password:</label>
+        <input type="password" id="pass2" name="confirm" />
+        <div class="error"></div>
+      </div>
 
       <button type="submit">Sign Up</button>
-      <!--button submit form-->
     </form>
     <!--end form-->
   </div>
@@ -77,6 +96,8 @@
     </footer>
   </div>
   <!--end footer-->
+
+  <script src="static/sign-up.js"></script>
 </body>
 
 </html>
