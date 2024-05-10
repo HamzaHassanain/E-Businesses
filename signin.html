@@ -19,17 +19,17 @@
     <!--start header-->
 
     <header>
-      <a href="{{url_for('home')}}">
+      <a href="home.html">
         <img class="logo" src="static/images/bookshop.png" width="60PX" height="60PX" />
       </a>
       <!--logo-->
 
-      <a href="{{ url_for('signin') }}" class="sing-in">
+      <a href="signin.html" class="sing-in">
         <!--button sing in-->
         <span> Sign In </span>
       </a>
 
-      <a href="{{ url_for('signup') }}" class="sing-up">
+      <a href="signup.html" class="sing-up">
         <!--button sing up-->
         <span> Sign Up </span>
       </a>
@@ -52,7 +52,7 @@
   <div class="container">
     <!--start container-->
 
-    <form action="{{ url_for('signin') }}" method="post">
+    <form action="signin.html" method="post">
       <!--start form-->
 
       <h2>Sign In</h2>
