@@ -19,8 +19,10 @@ export function SetEventListeners() {
 
 function AddToCart(bookId) {
   const cart = LC.getJSON("cart") || [];
-  const book = LC.getJSON("books").find((book) => book.bookId === bookId);
-  const cartItem = cart.find((item) => item.bookId === bookId);
+  const book = LC.getJSON("books").find(
+    (book) => Number(book.bookId) === Number(bookId)
+  );
+  const cartItem = cart.find((item) => Number(item.bookId) === Number(bookId));
 
   if (cartItem) {
     cartItem.quantity += 1;

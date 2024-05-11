@@ -24,7 +24,7 @@ getImageNamesInsideFolder("DBimages"); // relative path from LC.js
 seedLocalStorage();
 
 function seedLocalStorage() {
-  LC.clearAll();
+  LC.setJSON("books", []);
 
   const books = [];
   const Categories = [
@@ -41,7 +41,7 @@ function seedLocalStorage() {
       bookImage: `static/DBimages/image${i % 80}.png`, // relative path from index.html or any other html file
       bookCategory: Categories[i % 4],
       bookPrice: i * 10,
-      bookQuantity: i * 10,
+      bookQuantity: 1,
       bookDescribtion: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.`,
     });
   }
