@@ -2,7 +2,7 @@ import LC from "./LC.js";
 import { valid, showPopup, hidePopup } from "./place_orderJS.js";
 let totalPrice = 0,
   totalQuantity = 0;
-let cart = Array(LC.getJSON("cart"))[0];
+let cart = Array(LC.getJSON("cart"))[0] || [];
 
 document.addEventListener("DOMContentLoaded", () => {
   let checker = checkCart();
