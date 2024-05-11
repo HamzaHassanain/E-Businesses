@@ -1,4 +1,5 @@
 import LC from "./LC.js";
+import { valid, showPopup, hidePopup } from "./place_orderJS.js";
 let totalPrice = 0,
   totalQuantity = 0;
 let cart = Array(LC.getJSON("cart"))[0];
@@ -103,46 +104,68 @@ function calctotalQuantity() {
 }
 
 function handleRemoveButtons() {
-  document.querySelector(".rmv-btn").addEventListener("click", (e) => {
-    console.log("Here we are in the remove button event listener");
-    e.preventDefault();
-    let bookId =
-      e.target.parentElement.parentElement.querySelector(".quantity input").id;
-    let idx = -1;
-    for (let i = 0; i < cart.length; i++) {
-      if (cart[i].bookId == bookId) {
-        idx = i;
-        break;
+  let removeButtons = document.querySelectorAll(".rmv-btn");
+  removeButtons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      console.log("Here we are in the remove button event listener");
+      e.preventDefault();
+      let bookId =
+        e.target.parentElement.parentElement.querySelector(
+          ".quantity input"
+        ).id;
+      let idx = -1;
+      for (let i = 0; i < cart.length; i++) {
+        if (cart[i].bookId == bookId) {
+          idx = i;
+          break;
+        }
       }
-    }
-    cart.splice(idx, 1);
-    LC.setJSON("cart", cart);
-    location.reload();
+      cart.splice(idx, 1);
+      LC.setJSON("cart", cart);
+      location.reload();
+    });
   });
 }
 
 function handleQuantityChange() {
-  document.querySelector(".quantity input").addEventListener("change", (e) => {
-    let bookId = e.target.id;
-    let newQuantity = e.target.value;
-    for (let i = 0; i < cart.length; i++) {
-      if (cart[i].bookId == bookId) {
-        console.log(typeof cart[i].bookQuantity, typeof newQuantity);
-        cart[i].bookQuantity = newQuantity;
-        break;
+  let quantityInputs = document.querySelectorAll(".quantity input");
+  quantityInputs.forEach((input) => {
+    input.addEventListener("change", (e) => {
+      let bookId = e.target.id;
+      let newQuantity = e.target.value;
+      for (let i = 0; i < cart.length; i++) {
+        if (cart[i].bookId == bookId) {
+          console.log(typeof cart[i].bookQuantity, typeof newQuantity);
+          cart[i].bookQuantity = newQuantity;
+          break;
+        }
       }
-    }
-    LC.setJSON("cart", cart);
+    });
   });
 }
 
 function handleSaveCart() {
-  document.querySelector(".save-cart").addEventListener("click", (e) => {
+  let saveCartBtn = document.querySelector(".save-cart");
+  saveCartBtn.addEventListener("click", (e) => {
     e.preventDefault();
     handleQuantityChange();
+    LC.setJSON("cart", cart);
     location.reload();
   });
 }
+let clearCartPlaceOrder = () => {
+  document.querySelector("#placeOrderBtn").addEventListener("click", (e) => {
+    e.preventDefault();
+    if (valid === true) {
+      cart = [];
+      LC.setJSON("cart", cart);
+      showPopup("Order has been placed successfully");
+      setTimeout(() => {
+        location.reload();
+      }, 3000);
+    }
+  });
+};
 
 let init = (checker) => {
   if (checker) {
@@ -153,6 +176,7 @@ let init = (checker) => {
     if (document.querySelector(".rmv-btn")) {
       handleRemoveButtons();
       handleQuantityChange();
+      clearCartPlaceOrder();
     }
     if (document.querySelector(".save-cart")) {
       handleSaveCart();
