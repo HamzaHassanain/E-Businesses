@@ -51,119 +51,13 @@
     </header>
     <form>
       <div class="sub-title">
-        <h1>Shooping Cart</h1>
+        <h1>Shopping Cart</h1>
       </div>
       <div class="container">
         <!--cart book-->
 
-        <div class="book">
-          <div class="image">
-            <img src="static\images\book.png" alt="Book" />
-          </div>
-          <div class="info">
-            <div class="title">
-              <h1>book title</h1>
-            </div>
-            <div class="author">By : book author</div>
-            <div class="rate">
-              <ul>
-                <li class="fa fa-star checked"></li>
-                <li class="fa fa-star checked"></li>
-                <li class="fa fa-star checked"></li>
-                <li class="fa fa-star checked"></li>
-                <li class="fa fa-star"></li>
-              </ul>
-            </div>
-            <div class="summary">
-              <p>small description about the book.</p>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="price">
-              <span>Price:</span>
-              <span class="mid">book price$</span>
-            </div>
-
-            <div class="quantity">
-              <label for="quantity">Quantity:</label>
-              <input
-                type="number"
-                name="book_id"
-                id="quantity+book_id"
-                min="1"
-                value="book_quantity"
-              />
-            </div>
-            <div class="buttons-group">
-              <button
-                type="submit"
-                formaction=""
-                formmethod="post"
-                formnovalidate
-                class="rmv-btn"
-              >
-                Remove From Cart
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="book">
-          <div class="image">
-            <img src="static\images\book.png" alt="Book" />
-          </div>
-          <div class="info">
-            <div class="title">
-              <h1>book title</h1>
-            </div>
-            <div class="author">By : book author</div>
-            <div class="rate">
-              <ul>
-                <li class="fa fa-star checked"></li>
-                <li class="fa fa-star checked"></li>
-                <li class="fa fa-star checked"></li>
-                <li class="fa fa-star checked"></li>
-                <li class="fa fa-star"></li>
-              </ul>
-            </div>
-            <div class="summary">
-              <p>small description about the book.</p>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="price">
-              <span>Price:</span>
-              <span class="mid">book price$</span>
-            </div>
-
-            <div class="quantity">
-              <label for="quantity">Quantity:</label>
-              <input
-                type="number"
-                name="book_id"
-                id="quantity+book_id"
-                min="1"
-                value="book_quantity"
-              />
-            </div>
-            <div class="buttons-group">
-              <button
-                type="submit"
-                formaction=""
-                formmethod="post"
-                formnovalidate
-                class="rmv-btn"
-              >
-                Remove From Cart
-              </button>
-            </div>
-          </div>
-        </div>
-
         <!-- if cart is free -->
-        <div style="display: none">
+        <div style="display: none" class="empty-cart">
           <img
             src="static/images/empty_cart.jpg"
             alt="Empty Cart"
@@ -205,6 +99,8 @@
         <p>copyrights &copy; www.bookshop.com</p>
       </footer>
     </div>
+    <script src="static/place_orderJS.js"></script>
     <script src="static/script.js"></script>
+    <script src="static/cart.js" type="module"></script>
   </body>
 </html>
